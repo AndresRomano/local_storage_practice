@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIA - Laboratorio 1 Andrés Romano</title>
+  <!-- Link Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title-container rounded p-3 mb-3 my-3">
+      <h2 class="text">RIA - Laboratorio 1</h2>
+  </div>
+    <div class="accordion" id="accordionNewProduct">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="newProductHeading">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#newProductCollapse" aria-expanded="true" aria-controls="newProductCollapse">
+            New Product
+          </button>
+        </h2>
+        <div id="newProductCollapse" class="accordion-collapse collapse show" aria-labelledby="newProductHeading" data-bs-parent="#accordionNewProduct">
+          <div class="accordion-body">
+
+            <div class="text-center">
+              <h2 class="text">New Product</h2>
+            </div>
+
+            <form id="productForm" class="text-center">
+              <div class="mb-3 row justify-content-center">
+                  <label for="title" class="form-label col-sm-2">Title</label>
+                  <div class="col-sm-6">
+                      <input type="text" class="form-control" id="title" name="title" required>
+                  </div>
+              </div>
+              <div class="mb-3 row justify-content-center">
+                  <label for="price" class="form-label col-sm-2">Price</label>
+                  <div class="col-sm-6">
+                      <input type="number" class="form-control" id="price" name="price" required>
+                  </div>
+              </div>
+              <div class="mb-3 row justify-content-center">
+                  <label for="description" class="form-label col-sm-2">Description</label>
+                  <div class="col-sm-6">
+                      <textarea class="form-control" id="description" name="description" required></textarea>
+                  </div>
+              </div>
+              <div class="mb-3 row justify-content-center">
+                  <label for="category" class="form-label col-sm-2">Category</label>
+                  <div class="col-sm-6">
+                      <input type="text" class="form-control" id="category" name="category" required>
+                  </div>
+              </div>
+              <div class="mb-3 row justify-content-center">
+                  <div class="col-sm-8 text-end">
+                      <button type="submit" class="btn btn-primary">Send</button>
+                  </div>
+              </div>
+          </form>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion" id="accordionProductList">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="productListHeading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#productListCollapse" aria-expanded="false" aria-controls="productListCollapse">
+            Product List
+          </button>
+        </h2>
+        <div id="productListCollapse" class="accordion-collapse collapse" aria-labelledby="productListHeading" data-bs-parent="#accordionProductList">
+          <div class="accordion-body">
+            <button id="loadProductListBtn" class="btn btn-primary">Load Product List</button>
+            <button id="refreshProductListBtn" class="btn btn-primary" style="display: none;">Refresh Product List</button>
+            <div id="productList" class="rounded-container" style="display: none;">
+              <h2>Product List</h2>
+              <!-- Product table -->
+              <div id="productList">
+              <table id="productTable" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Category</th>
+                  </tr>
+                </thead>
+                <tbody id="productTableBody">
+                
+                </tbody>
+              </table>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link de JavaScript -->
+  <script src="script.js"></script>
+  <!-- Link de Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
